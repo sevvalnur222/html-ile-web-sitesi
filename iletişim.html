@@ -1,0 +1,176 @@
+<!--Sitede form elamanları içeren bir iletişim sayfası olmalıdır.
+İletişim sayfası tüm form elemanlarını içermeli, formun tüm elamanlarının elemanın özelliğine
+göre seçim yada veri girişi yapılacak şekilde gönderilmesi sağlanmalıdır.
+İletişim formundaki gerekli kontrol işlemleri (boş mu, e-mail formatında mı vb.) javascript ve
+popular bir js framework (Vue.js, Angular.js , Express.js vb) kullanılarak iki farklı butonda ayrı ayrı
+denetlenmelidir. (Html elemanlarına ait dahili denetimler kabul edilmeyecekitir)
+
+Form, temizle ve gönder butonları içermelidir.
+Gönderilen form elemanlarına ait tüm bilgiler başka bir sayfada görüntü<lenmelidir-->
+ 
+
+<!doctype html>
+    <html lang="en"><head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <!-- Bootstrap CSS -->
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-pzjw8f+ua6mzKtb62ndL3Wd5LKaBo7XFbd4/zfczE4hT8/1qQ5K62XQOmXz4W2Tn" crossorigin="anonymous">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-wMxk2sjv+mFBsD9UjD/QJO5GdLehKRg4Owq8Mv8j7E2TteuKAhXvDFlY7ZnvPrjcKdIuTBl5IsaQDGOK5s2zUg==" crossorigin="anonymous" referrerpolicy="no-referrer">
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+      <title>İletisim</title>
+      <link rel="stylesheet" href="style.css">
+    
+    </head>
+    
+    <body>
+      <!-- Menu Başlangıç -->
+    
+      <!-- Menü Bitiş -->
+      <div class="background-color">
+        <div class="bg-1"></div>
+        <div class="bg-2"></div>
+      </div>
+      <section class="container">
+        <header>İletişim Formu</header>
+        <form id="contact" action="iletişim.php" method="post" class="form" onsubmit="return validateForm()">
+          <div class="column">
+            <div class="input-box">
+              <label>İsim</label>
+              <input type="text" name="ad" placeholder="İsminiz" required="">
+            </div>
+            <div class="input-box">
+              <label>Soyisim</label>
+              <input type="text" name="soyad" placeholder="Soyadınız" required="">
+            </div>
+          </div>
+          <div class="input-box">
+            <label>Email </label>
+            <input type="text" name="email" placeholder="Mail adresinizi giriniz" required="">
+          </div>
+          <div class="column">
+            <div class="input-box">
+              <label>Kullanıcı adı</label>
+              <input type="text" name="kullaniciadi" placeholder="Kullanıcı adı giriniz.">
+            </div>
+            <div class="input-box">
+              <label>Doğum Tarihi</label>
+              <input type="date" name="date" placeholder="Doğum Tarihiniz">
+            </div>
+          </div>
+          <div class="gender-box">
+            <h3>Cinsiyet</h3>
+            <div class="gender-option">
+              <div class="gender">
+                <input type="radio" id="check-erkek" name="cinsiyet" value="Erkek">
+                <label for="check-erkek">Erkek</label>
+              </div>
+              <div class="gender">
+                <input type="radio" id="check-kadin" name="cinsiyet" value="Kadın">
+                <label for="check-kadin">Kadın</label>
+              </div>
+              <div class="gender">
+                <input type="radio" id="check-other" name="cinsiyet" value="Belirtilmemiş">
+                <label for="check-other">Belirtmek istemiyorum.</label>
+              </div>
+            </div>
+          </div>
+          <div class="language-box">
+            <h3>Bilinen Programlama Dilleri</h3>
+            <div class="language-option">
+              <div class="language">
+                <input type="checkbox" name="lang[]" value="C++" id="check-cpp">
+                <label for="check-cpp">C++</label>
+              </div>
+              <div class="language">
+                <input type="checkbox" name="lang[]" value="C#" id="check-csharp">
+                <label for="check-csharp">C#</label>
+              </div>
+              <div class="language">
+                <input type="checkbox" name="lang[]" value="Python" id="check-python">
+                <label for="check-python">Python</label>
+              </div>
+              <div class="language">
+                <input type="checkbox" name="lang[]" value="Java" id="check-java">
+                <label for="check-java">Java</label>
+              </div>
+              <div class="language">
+                <input type="checkbox" name="lang[]" value="Web Dilleri" id="check-web">
+                <label for="check-web">Web Dilleri</label>
+              </div>
+              <div class="language">
+                <input type="checkbox" name="lang[]" value="Diğer" id="check-diger">
+                <label for="check-diger">Diğer</label>
+              </div>
+            </div>
+          </div>
+          <div class="input-box address">
+            <div class="select-box">
+              <select name="ulke">
+                <option hidden="">Ülke</option>
+                <option>Türkiye</option>
+                <option>Diğer</option>
+              </select>
+            </div>
+            <br>
+            <button type="submit" class="btn" value="Gönder">Gönder</button>
+            <button type="reset" class="btn" value="Temizle">Temizle</button>
+        
+      </div></form></section>
+      <script>
+    var form = document.getElementById("contact");
+    form.addEventListener("submit", function (event) {
+      var ad = document.getElementsByName("ad")[0].value;
+      var soyad = document.getElementsByName("soyad")[0].value;
+      var email = document.getElementsByName("email")[0].value;
+    
+      if (ad.trim() === "") {
+        alert("İsim alanı boş bırakılamaz");
+        event.preventDefault(); // Form gönderimini engelle
+        return false;
+      }
+    
+      if (soyad.trim() === "") {
+        alert("Soyisim alanı boş bırakılamaz");
+        event.preventDefault(); // Form gönderimini engelle
+        return false;
+      }
+    
+      if (email.trim() === "") {
+        alert("Email alanı boş bırakılamaz");
+        event.preventDefault(); // Form gönderimini engelle
+        return false;
+      }
+    
+      var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailRegex.test(email)) {
+        alert("Geçerli bir email adresi giriniz");
+        event.preventDefault(); // Form gönderimini engelle
+        return false;
+      }
+    
+      // Tüm doğrulamalar geçerliyse form gönderilecektir
+    });
+      </script>
+    
+      <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+      <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js" integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+" crossorigin="anonymous"></script>
+    
+    
+    
+    </body></html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

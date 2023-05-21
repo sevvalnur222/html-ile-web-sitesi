@@ -1,0 +1,266 @@
+h1{
+    color:rgb(13, 13, 53);
+}
+
+
+
+footer{
+
+    background-color: cadetblue;
+}
+
+.cark{
+    border:3px solid limegreen;
+    padding:10px;
+  }
+
+  
+  .hepsi1{
+  border:3px solid rgb(255, 253, 253);
+  padding:20px;
+  margin:20px;
+  }
+
+ .hepsi2{
+      border: 3px solid rgb(176, 199, 224);
+        padding:30px;
+        margin: 30px;
+     }
+
+     .aa{
+        border: 3px solid rgb(255, 254, 253);
+        margin:20px;
+      }
+      .ab{
+        border:3px solid rgb(255, 255, 255);
+        padding:20px;
+        margin:20px;
+      }
+      .ac{
+      border: 3px solid rgb(255, 254, 253);
+      padding:30px;
+      }
+
+      .taraklı, .kuzuluk, .cark, .sapanca, .yenimahalle, .golbası, .golkent, .karasu, .deprem{
+       
+        padding:10px;
+        width:15%;
+        background-color:rgb(150, 201, 158);
+        margin: 0px;
+        
+     }
+     
+     .a,.b,.c, .ç,.d,.e,.f,.g,.h,.ı{
+     
+      background-color: rgb(228, 210, 183);
+      width:13%;
+     }
+
+     
+      .i,.j,.k,.l,.m,.n,.o,.ö,.p,.r,.s,.ş,.t,.u,.ü,.v,.y,.z,.x, .q{
+        padding:10px;
+        width:15%;
+        background-color:rgb(210, 211, 147);
+        margin: 0px;
+      }
+
+
+      .paragraf{
+        border:3px solid red;
+        font-family:Brandley Hand ;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+
+
+
+
+
+
+
+
+
+/* Import Google font - Poppins */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+
+.container {
+    position: relative;
+    max-width: 600px;
+    width: 100%;
+    background: #fff;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    margin-top: 40px;
+}
+
+.container header {
+    font-size: 1.5rem;
+    color: rgb(215, 150, 70);
+    font-weight: 500;
+    text-align: center;
+}
+
+.container .form {
+    margin-top: 10px;
+}
+
+.form .input-box {
+    width: 100%;
+    margin-top: 20px;
+}
+
+.input-box label {
+    color: #333;
+}
+
+.form :where(.input-box input, .select-box) {
+    position: relative;
+    height: 50px;
+    width: 100%;
+    outline: none;
+    font-size: 1rem;
+    color: #707070;
+    margin-top: 8px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    padding: 0 15px;
+}
+
+.input-box input:focus {
+    box-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
+}
+
+.form .column {
+    display: flex;
+    column-gap: 15px;
+}
+
+.form .gender-box {
+    margin-top: 20px;
+}
+
+.gender-box h3 {
+    color: #333;
+    font-size: 1rem;
+    font-weight: 400;
+    margin-bottom: 8px;
+}
+
+.form :where(.gender-option, .gender) {
+    display: flex;
+    align-items: center;
+    column-gap: 50px;
+    flex-wrap: wrap;
+}
+
+.form .gender {
+    column-gap: 5px;
+}
+
+.gender input {
+    accent-color: rgb(215, 150, 70);
+}
+
+.form :where(.gender input, .gender label) {
+    cursor: pointer;
+}
+
+.gender label {
+    color: #707070;
+}
+
+.address :where(input, .select-box) {
+    margin-top: 15px;
+}
+
+.select-box select {
+    height: 100%;
+    width: 100%;
+    outline: none;
+    border: none;
+    color: #707070;
+    font-size: 1rem;
+}
+
+.form button {
+    height: 55px;
+    width: 100%;
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 400;
+    margin-top: 30px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    background: rgb(215, 150, 70);
+}
+
+.form button:hover {
+    background: rgb(138, 70, 215);
+}
+
+/*Responsive*/
+@media screen and (max-width: 500px) {
+    .form .column {
+        flex-wrap: wrap;
+    }
+
+    .form :where(.gender-option, .gender) {
+        row-gap: 15px;
+    }
+}
+
+.form .language-box {
+    margin-top: 20px;
+}
+
+.language-box h3 {
+    color: #333;
+    font-size: 1rem;
+    font-weight: 400;
+    margin-bottom: 8px;
+}
+
+.form :where(.language-option, .language) {
+    display: flex;
+    align-items: center;
+    column-gap: 50px;
+    flex-wrap: wrap;
+}
+
+.form .language {
+    column-gap: 5px;
+}
+
+.language input {
+    accent-color: rgb(157, 70, 215);
+}
+
+.form :where(.language input, .language label) {
+    cursor: pointer;
+}
+
+.language label {
+    color: #707070;
+}
+@media (max-width: 576px) { /* Mobil cihazlar için */
+    #mesajalanı {
+      width: 100%;
+      max-width: 100%;
+      height: 120px;
+    }
+  }
+  
